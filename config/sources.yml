@@ -37,23 +37,18 @@ dcard:
 # ---------------------------------------------------------------------------
 youtube:
   max_videos_per_channel: 3   # 每個頻道抓最近幾支
+  # channel_id 最穩定（免解析）；找不到時可改填 handle: "@xxx"
   channels:
-    - name: 股癌 Gooaye
-      handle: "@gooaye"
-    - name: 游庭皓的財經皓角
-      handle: "@yu_finance"
-    - name: 老謝看世界
-      handle: "@laoxie"
-    - name: 阿格力 Andy
-      handle: "@agriculture_stock"
-    - name: 股海老牛
-      handle: "@oldcow"
-    - name: Mr.Market 市場先生
-      handle: "@rich01"
-    - name: 柴鼠兄弟
-      handle: "@ZRBros"
-    - name: 財經百人
-      handle: "@money100"
+    - name: 游庭皓的財經皓角        # 每日 8:30 解讀財經，個股訊號強
+      channel_id: UC0lbAQVpenvfA2QqzsRtL_g
+    - name: 股癌 Gooaye             # 知名輿情指標
+      channel_id: UC23rnlQU_qE3cec9x709peA
+    - name: 數字台灣（謝金河）       # 偏總經/產業，週更
+      channel_id: UC2mLkUQkYRAlE2GLUumnueA
+    - name: 股海老牛                # 價值/存股，含個股點評
+      channel_id: UCwxU6JWj0oOk6behq3XbOiQ
+    - name: 阿格力博識              # 存股/個股基本面
+      handle: "@agreedr"
 
 # ---------------------------------------------------------------------------
 # 4) 財經 Podcast（抓 RSS 的 shownotes / 標題；多數無逐字稿，訊號較弱）
