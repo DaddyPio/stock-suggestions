@@ -7,6 +7,9 @@ feedparser>=6.0
 # YouTube captions
 youtube-transcript-api>=0.6.2
 
+# Podcast 純音檔語音轉錄（CPU，免費；股癌等無逐字稿節目）
+faster-whisper>=1.0
+
 # LLM
 anthropic>=0.40
 

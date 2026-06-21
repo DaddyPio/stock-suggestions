@@ -75,11 +75,36 @@ py -m app.main send               # 用現有排名寄信
 
 > RSS 網址與 YouTube handle 可能隨網站改版失效，這是目前最脆弱的環節，發現抓不到時優先檢查這裡。
 
+## Podcast 語音轉錄（股癌等純音檔節目）
+
+部分節目（如**股癌**）YouTube 字幕關閉、shownotes 又多為業配，抽不到內容。
+對這類節目在 `config/sources.yml` 標記 `transcribe: true`，會用 **faster-whisper**
+（CPU、免費）下載音檔轉逐字稿：
+
+```yaml
+podcast_rss:
+  - name: 股癌 Gooaye
+    url: https://feeds.soundon.fm/podcasts/954689a5-...xml
+    transcribe: true
+whisper:
+  model: base                 # base 最快；small 較準但慢
+  language: zh
+  max_episodes_per_feed: 1    # 每次最多轉幾集（控時間）
+```
+
+- 逐字稿快取在 `data/cache/transcripts/`，同一集不重複轉錄。
+- 本機 base 模型轉一集 ~30-40 分鐘音檔約需 **8-9 分鐘**；Actions 已設 45 分鐘 timeout 並快取模型。
+- **準確度取捨**：base 模型會聽錯字（如「股癌」→「古癌」、輝達常漏抓），個股漏抓/誤判會增加；要更準可改 `model: small`（較慢）。
+
 ## 已知限制
 
-- **Podcast 無逐字稿**：多數節目只能用標題＋簡介，訊號弱；YouTube 中文自動字幕才是主力。
-- **抽股雜訊**：少數公司簡稱與日常用語相同（如「大同」），已用 `ambiguous_names` 黑名單過濾，仍可能有漏網。
-- **論壇穩定性**：PTT/Dcard 偶有改版或防護，屬輔助來源。
+- **抽股雜訊（中文無詞界）**：2 字公司簡稱可能命中日常用語的子字串（如「和大」命中「和大聲」、「世界」命中「世界盃」）。已用兩道防線降噪：
+  1. `ambiguous_names` 黑名單（常用詞簡稱改用代號命中）
+  2. 年份/代號衝突過濾（如「2024」年份不會誤判成志聯，除非名稱也出現）
+
+  殘留的單來源、低頻雜訊因排名以「不重複來源數」加權，幾乎不會進前 10。徹底解法是 jieba 中文斷詞（後續優化）。
+- **論壇穩定性**：PTT 可用；Dcard 偶有 Cloudflare 403，屬輔助來源。
+- **來源失效**：RSS 網址 / YouTube channel_id 可能隨改版失效，抓不到時優先檢查 `config/sources.yml`。
 
 ## 專案結構
 

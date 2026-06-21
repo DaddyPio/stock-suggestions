@@ -107,15 +107,22 @@ class StockMatcher:
         """回傳命中的 ticker 集合。"""
         if not text:
             return set()
-        hits: set[str] = set()
+        name_hits: set[str] = set()
         if self._name_re:
             for m in self._name_re.finditer(text):
-                hits.add(self.name_to_ticker[m.group(0)])
+                name_hits.add(self.name_to_ticker[m.group(0)])
+
+        ticker_hits: set[str] = set()
         for m in self._ticker_re.finditer(text):
             t = m.group(1)
-            if t in self.ticker_to_name:
-                hits.add(t)
-        return hits
+            if t not in self.ticker_to_name:
+                continue
+            # 年份/代號衝突：1990–2030 的數字多半是年份，
+            # 僅在該股名稱同時出現時才採信，否則略過。
+            if 1990 <= int(t) <= 2030 and t not in name_hits:
+                continue
+            ticker_hits.add(t)
+        return name_hits | ticker_hits
 
     def name_of(self, ticker: str) -> str:
         return self.ticker_to_name.get(ticker, ticker)

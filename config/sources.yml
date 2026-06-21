@@ -54,10 +54,16 @@ youtube:
 # 4) 財經 Podcast（抓 RSS 的 shownotes / 標題；多數無逐字稿，訊號較弱）
 # ---------------------------------------------------------------------------
 podcast_rss:
+  # 股癌：YouTube 字幕關閉、shownotes 多為業配 → 開啟語音轉錄取得完整內容
   - name: 股癌 Gooaye
     url: https://feeds.soundon.fm/podcasts/954689a5-3096-43a4-a80b-7810b219cef3.xml
-  - name: 財經M平方
-    url: https://feeds.soundon.fm/podcasts/9d7a0b1c-macromicro.xml
+    transcribe: true
+
+# 語音轉錄設定（faster-whisper，CPU，免費）
+whisper:
+  model: base                 # base 最快；small 較準但慢。Actions CPU 建議 base
+  language: zh
+  max_episodes_per_feed: 1    # 每個 feed 每次最多轉幾集（控制 Actions 執行時間）
 
 # ---------------------------------------------------------------------------
 # 抽股雜訊控制：這些「公司簡稱」太像日常用語，容易誤判，預設忽略。
@@ -82,3 +88,27 @@ ambiguous_names:
   - 全球
   - 大將
   - 大宇
+  # 以下多為「日常用語＝股票簡稱」，在 podcast 逐字稿中特別容易誤判（仍可用代號命中）
+  - 大量
+  - 數字
+  - 全家
+  - 進階
+  - 幸福
+  - 新興
+  - 志聯
+  - 大成鋼
+  - 一詮
+  # 精確等於常用詞 / 地名 / 國際品牌（跨來源易誤判，仍可用代號命中）
+  - 宏觀      # 宏觀經濟
+  - 三星      # Samsung（非三星科技 5007）
+  - 台南      # 台南市
+  - 冠軍      # 冠軍 = champion
+  - 時報      # 工商/中國時報等媒體名
+  - 全新      # 全新 = brand new
+  - 南港      # 地名
+  - 中信      # 多指中信集團泛稱
+  - 開發      # 開發 = develop
+  - 東陽
+  - 中工
+  - 大車隊
+  - 三商

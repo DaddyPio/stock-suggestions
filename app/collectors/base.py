@@ -49,7 +49,8 @@ def collect_all(sources: dict, lookback_days: int = 1) -> list[RawItem]:
         ("ptt", lambda: ptt.collect(sources.get("ptt", {}), lookback_days)),
         ("dcard", lambda: dcard.collect(sources.get("dcard", {}), lookback_days)),
         ("youtube", lambda: youtube.collect(sources.get("youtube", {}), lookback_days)),
-        ("podcast", lambda: podcast.collect(sources.get("podcast_rss", []), lookback_days)),
+        ("podcast", lambda: podcast.collect(
+            sources.get("podcast_rss", []), lookback_days, sources.get("whisper", {}))),
     ]
     for name, fn in tasks:
         try:

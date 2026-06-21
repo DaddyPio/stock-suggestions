@@ -16,7 +16,7 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45          # 含 podcast 語音轉錄（faster-whisper CPU）
     steps:
       - uses: actions/checkout@v4
 
@@ -28,12 +28,20 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
+      - name: Cache Whisper model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-${{ hashFiles('config/sources.yml') }}
+          restore-keys: whisper-
+
       - name: Run daily pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          HF_HUB_DISABLE_SYMLINKS_WARNING: "1"
         run: |
           python -m app.main --lookback "${{ github.event.inputs.lookback || '1' }}" run
 
