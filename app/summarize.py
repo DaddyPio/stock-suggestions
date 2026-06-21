@@ -50,9 +50,9 @@ def _summarize_one(client, name: str, ticker: str, snippets: list[dict]) -> str:
 def summarize_top(item_date: str, ranked: list[dict]) -> list[dict]:
     """逐檔產生摘要，寫回 ranked 與 daily_rankings。"""
     if not ANTHROPIC_API_KEY:
-        log.warning("未設定 ANTHROPIC_API_KEY，跳過摘要")
+        log.warning("未設定 ANTHROPIC_API_KEY，改用原文片段（無 AI 摘要）")
         for r in ranked:
-            r["summary"] = "（未設定 ANTHROPIC_API_KEY，無法產生摘要）"
+            r["summary"] = _fallback_digest(item_date, r["ticker"])
         _save_summaries(item_date, ranked)
         return ranked
 
@@ -69,6 +69,23 @@ def summarize_top(item_date: str, ranked: list[dict]) -> list[dict]:
             r["summary"] = "（摘要產生失敗）"
     _save_summaries(item_date, ranked)
     return ranked
+
+
+def _fallback_digest(item_date: str, ticker: str, max_lines: int = 6) -> str:
+    """無 API key 時的後備：彙整各來源原文片段，去重後逐則列出。"""
+    snippets = _gather(item_date, ticker)
+    seen: set[str] = set()
+    lines: list[str] = ["📌 原文片段（未啟用 AI 摘要）："]
+    for s in snippets:
+        text = (s["snippet"] or "").strip()
+        key = text[:40]
+        if not text or key in seen:
+            continue
+        seen.add(key)
+        lines.append(f"• [{s['source_name']}] {text}")
+        if len(lines) > max_lines:
+            break
+    return "\n".join(lines)
 
 
 def _save_summaries(item_date: str, ranked: list[dict]) -> None:
