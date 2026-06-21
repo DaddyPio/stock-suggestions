@@ -1,0 +1,16 @@
+# HTTP / parsing
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=5.0
+feedparser>=6.0
+
+# YouTube captions
+youtube-transcript-api>=0.6.2
+
+# LLM
+anthropic>=0.40
+
+# Templating / config / env
+jinja2>=3.1
+PyYAML>=6.0
+python-dotenv>=1.0

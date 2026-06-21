@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+
+# Local data (SQLite DB is ephemeral; history is committed as JSON)
+data/*.db
+data/*.db-journal
+data/cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

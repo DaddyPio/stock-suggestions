@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { font-family: -apple-system, "Segoe UI", "Microsoft JhengHei", sans-serif;
+         color: #1a1a1a; background: #f5f6f8; margin: 0; padding: 0; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 16px; }
+  .header { text-align: center; padding: 20px 0 8px; }
+  .header h1 { font-size: 20px; margin: 0; color: #111; }
+  .header .date { color: #888; font-size: 13px; margin-top: 4px; }
+  .card { background: #fff; border-radius: 10px; padding: 16px 18px; margin: 12px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .rank-row { display: flex; align-items: baseline; gap: 8px; }
+  .rank { font-size: 22px; font-weight: 700; color: #c79100; min-width: 34px; }
+  .name { font-size: 17px; font-weight: 700; }
+  .ticker { color: #888; font-size: 13px; font-weight: 500; }
+  .metrics { margin: 8px 0; font-size: 12.5px; color: #555; }
+  .pill { display: inline-block; background: #eef1f5; border-radius: 12px;
+          padding: 2px 9px; margin-right: 6px; margin-top: 4px; }
+  .bull { color: #1a8a3b; } .bear { color: #c0392b; }
+  .summary { font-size: 14px; line-height: 1.7; color: #2a2a2a; margin-top: 10px;
+             white-space: pre-wrap; }
+  .footer { text-align: center; color: #aaa; font-size: 11px; padding: 18px 0; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>📈 台股每日輿情 Top {{ rows|length }}</h1>
+      <div class="date">{{ item_date }}　·　資料來源：新聞評論／論壇／YouTube／Podcast</div>
+    </div>
+
+    {% for r in rows %}
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">{{ r.rank }}</span>
+        <span class="name">{{ r.name }}</span>
+        <span class="ticker">{{ r.ticker }}</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 {{ r.total_score }}</span>
+        <span class="pill">討論度 {{ r.discussion_score }}</span>
+        <span class="pill">推薦度 {{ r.recommendation_score }}</span>
+        <span class="pill">{{ r.n_sources }} 來源／{{ r.n_mentions }} 則</span>
+        <span class="pill"><span class="bull">看多 {{ r.n_bull }}</span> ·
+          <span class="bear">看空 {{ r.n_bear }}</span></span>
+      </div>
+      <div class="summary">{{ r.summary }}</div>
+    </div>
+    {% endfor %}
+
+    <div class="footer">
+      本信由 Stock-suggestions 自動產生，僅供研究參考，非投資建議。<br>
+      綜合分 = 討論度 × {{ w_disc }} + 推薦度 × {{ w_rec }}
+    </div>
+  </div>
+</body>
+</html>

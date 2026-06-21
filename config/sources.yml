@@ -1,0 +1,89 @@
+# 預設來源清單。所有抓取失敗的來源都會被略過（不影響整體流程）。
+# RSS 網址與 YouTube handle 可能隨網站改版而失效，可隨時在此編修。
+
+# ---------------------------------------------------------------------------
+# 1) 股市評論 / 新聞（RSS 優先，最穩定）
+# ---------------------------------------------------------------------------
+news_rss:
+  - name: 鉅亨網-台股
+    url: https://news.cnyes.com/rss/v1/news/category/tw_stock
+  - name: 鉅亨網-頭條
+    url: https://news.cnyes.com/rss/v1/news/category/headline
+  - name: 經濟日報-股市
+    url: https://money.udn.com/rssfeed/news/1001/5590?ch=money
+  - name: 工商時報-證券
+    url: https://www.ctee.com.tw/rss/stock
+  - name: 中央社-財經
+    url: https://feeds.feedburner.com/rsscna/finance
+  - name: Yahoo股市-新聞
+    url: https://tw.stock.yahoo.com/rss?category=news
+
+# ---------------------------------------------------------------------------
+# 2) 論壇 / 社群
+# ---------------------------------------------------------------------------
+ptt:
+  enabled: true
+  board: Stock
+  pages: 3          # 往回翻幾頁（每頁約 20 篇）
+
+dcard:
+  enabled: true
+  forum: stock
+  limit: 30
+
+# ---------------------------------------------------------------------------
+# 3) YouTube 財經頻道（用頻道 RSS 列最新影片 + 中文自動字幕）
+#    可填 channel_id（UC 開頭）或 handle（@ 開頭）；handle 會在執行時解析成 id。
+# ---------------------------------------------------------------------------
+youtube:
+  max_videos_per_channel: 3   # 每個頻道抓最近幾支
+  channels:
+    - name: 股癌 Gooaye
+      handle: "@gooaye"
+    - name: 游庭皓的財經皓角
+      handle: "@yu_finance"
+    - name: 老謝看世界
+      handle: "@laoxie"
+    - name: 阿格力 Andy
+      handle: "@agriculture_stock"
+    - name: 股海老牛
+      handle: "@oldcow"
+    - name: Mr.Market 市場先生
+      handle: "@rich01"
+    - name: 柴鼠兄弟
+      handle: "@ZRBros"
+    - name: 財經百人
+      handle: "@money100"
+
+# ---------------------------------------------------------------------------
+# 4) 財經 Podcast（抓 RSS 的 shownotes / 標題；多數無逐字稿，訊號較弱）
+# ---------------------------------------------------------------------------
+podcast_rss:
+  - name: 股癌 Gooaye
+    url: https://feeds.soundon.fm/podcasts/954689a5-3096-43a4-a80b-7810b219cef3.xml
+  - name: 財經M平方
+    url: https://feeds.soundon.fm/podcasts/9d7a0b1c-macromicro.xml
+
+# ---------------------------------------------------------------------------
+# 抽股雜訊控制：這些「公司簡稱」太像日常用語，容易誤判，預設忽略。
+# 仍可透過「股票代號」或全名被命中。
+# ---------------------------------------------------------------------------
+ambiguous_names:
+  - 大同
+  - 統一
+  - 中興
+  - 國際
+  - 台灣
+  - 第一
+  - 三商
+  - 中華
+  - 大成
+  - 永光
+  - 環球
+  - 全國
+  - 聯合      # 聯合報系 / 聯合艦隊 / 聯合會
+  - 世界      # 世界盃 / 全世界（世界先進仍可用代號 5347 命中）
+  - 國產      # 國產車 / 本國產業
+  - 全球
+  - 大將
+  - 大宇
