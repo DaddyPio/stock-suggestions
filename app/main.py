@@ -5,7 +5,8 @@
   collect         抓取各來源並抽出個股提及（不含情緒/排名）
   rank            對當日做情緒判斷 + 排名 + 摘要（不寄信）
   send            用最新排名寄信
-  run             一條龍：universe→collect→sentiment→rank→summary→send
+  run             一條龍：universe→collect→sentiment→rank→summary→web→send
+  web             用現有排名輸出 GitHub Pages 報告頁（docs/）
   test-email      用假資料寄一封測試信，驗證 Gmail 設定
   show            印出當日排名（不呼叫 LLM、不寄信）
 
@@ -116,12 +117,16 @@ def cmd_run(args) -> None:
     ranking.save(args.date, ranked)
     print("④ 摘要…")
     summarize.summarize_top(args.date, ranked)
-    print("⑤ 寄信…")
+    print("⑤ 輸出網頁報告…")
+    from app import web_report
+
     rows = _fetch_ranking(args.date)
+    web_report.export(args.date, rows)
     html = email_report.render_html(args.date, rows)
     email_report.save_history(args.date, rows, html)
+    print("⑥ 寄信…")
     ok = email_report.send(args.date, html)
-    print("✅ 完成並寄出" if ok else "✅ 完成（未寄信，HTML 已存 data/history）")
+    print("✅ 完成（網頁已更新）" + ("，並已寄信" if ok else "；未寄信（無 Gmail 設定）"))
 
 
 def cmd_test_email(args) -> None:
@@ -138,6 +143,17 @@ def cmd_test_email(args) -> None:
     html = email_report.render_html(args.date, rows)
     ok = email_report.send(args.date, html)
     print("✅ 測試信已寄出" if ok else "⚠️ 寄信失敗，請檢查 GMAIL_ADDRESS / GMAIL_APP_PASSWORD")
+
+
+def cmd_web(args) -> None:
+    from app import web_report
+
+    rows = _fetch_ranking(args.date)
+    if not rows:
+        print("⚠️ 當日無排名資料，請先跑 rank")
+        return
+    path = web_report.export(args.date, rows)
+    print(f"✅ 網頁報告已輸出：{path}")
 
 
 def cmd_show(args) -> None:
@@ -183,6 +199,7 @@ def main() -> None:
         ("rank", cmd_rank),
         ("send", cmd_send),
         ("run", cmd_run),
+        ("web", cmd_web),
         ("test-email", cmd_test_email),
         ("show", cmd_show),
     ]:

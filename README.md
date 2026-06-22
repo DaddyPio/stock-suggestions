@@ -53,6 +53,17 @@ py -m app.main send               # 用現有排名寄信
 不設 `ANTHROPIC_API_KEY` 也能跑：情緒全標中性、摘要留白，可先驗證抓取與排名管線。
 不設 Gmail 也能跑：信件 HTML 會存到 `data/history/<date>.html`。
 
+## 網頁檢視（GitHub Pages）
+
+每次 `run` 會輸出報告頁到 `docs/`：
+- `docs/index.html` — 最新一日（固定網址）
+- `docs/reports/<date>.html` — 每日封存，首頁底部有歷史導覽
+
+**啟用一次**：repo → Settings → Pages → Source 選「Deploy from a branch」→ 分支 `main`、資料夾 `/docs` → Save。
+之後網址約為 `https://daddypio.github.io/stock-suggestions/`，雲端每日跑完自動更新，手機可看。
+
+本機預覽：`py -m app.main --date <YYYY-MM-DD> web` 後開 `docs/index.html`。
+
 ## 雲端排程（GitHub Actions）
 
 `.github/workflows/daily.yml` 每交易日 22:30 UTC（= 隔天 06:30 台灣時間）自動跑 `run`，
