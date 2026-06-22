@@ -64,7 +64,7 @@ def cmd_collect(args) -> None:
     matcher, sources = _load_matcher()
     items = collect_all(sources, lookback_days=args.lookback)
     print(f"抓到 {len(items)} 筆原始內容")
-    n = persist_and_extract(items, matcher)
+    n = persist_and_extract(items, matcher, args.date)
     print(f"✅ 新增 {n} 筆個股提及（item_date={args.date}）")
 
 
@@ -105,7 +105,7 @@ def cmd_run(args) -> None:
     matcher, sources = _load_matcher()
     print("① 抓取…")
     items = collect_all(sources, lookback_days=args.lookback)
-    n = persist_and_extract(items, matcher)
+    n = persist_and_extract(items, matcher, args.date)
     print(f"   原始 {len(items)} 筆，新增提及 {n} 筆")
     print("② 情緒判斷…")
     sentiment.classify_pending(args.date)
@@ -190,7 +190,8 @@ def main() -> None:
 
     parser = argparse.ArgumentParser(prog="stock-suggestions")
     parser.add_argument("--date", default=today_tw().isoformat(), help="歸屬日 YYYY-MM-DD")
-    parser.add_argument("--lookback", type=int, default=1, help="抓最近 N 天內容")
+    parser.add_argument("--lookback", type=int, default=3,
+                        help="抓最近 N 天內容（dedup 去重，不會重複計算；預設 3 以涵蓋週末）")
     sub = parser.add_subparsers(dest="command", required=True)
 
     for name, fn in [

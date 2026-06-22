@@ -25,8 +25,15 @@ def _snippet(text: str, ticker: str, name: str) -> str:
     return text[start:end].replace("\n", " ").strip()
 
 
-def persist_and_extract(items: list[RawItem], matcher: StockMatcher) -> int:
-    """入庫 raw_items（去重）並產生 mentions。回傳新增 mention 數。"""
+def persist_and_extract(items: list[RawItem], matcher: StockMatcher, report_date: str) -> int:
+    """入庫 raw_items（以 hash 去重）並產生 mentions。回傳新增 mention 數。
+
+    所有「本次新抓到」的內容都歸屬到 report_date（執行日），而非內容發布日：
+      - 避免無日期內容被漏掉
+      - 週一可涵蓋週五/週末累積的內容
+      - hash 去重確保同一篇文章只在「首次抓到的那天」計入一次（每日新增量模型）
+    內容真實發布日仍保留在 published_at 供參考。
+    """
     now = datetime.now().isoformat(timespec="seconds")
     n_mentions = 0
     with get_conn() as conn:
@@ -38,11 +45,11 @@ def persist_and_extract(items: list[RawItem], matcher: StockMatcher) -> int:
                 " VALUES (?,?,?,?,?,?,?,?,?)",
                 (
                     item.source_type, item.source_name, item.url, item.title,
-                    item.content, item.published_at, now, item.item_date, h,
+                    item.content, item.published_at, now, report_date, h,
                 ),
             )
             if cur.rowcount == 0:
-                continue  # 重複內容
+                continue  # 重複內容（已在先前某日計入）
             raw_id = cur.lastrowid
 
             tickers = matcher.find(item.content)
@@ -54,7 +61,7 @@ def persist_and_extract(items: list[RawItem], matcher: StockMatcher) -> int:
                     " VALUES (?,?,?,?,?,?,?,?)",
                     (
                         raw_id, t, name, item.source_type, item.source_name,
-                        _snippet(item.content, t, name), None, item.item_date,
+                        _snippet(item.content, t, name), None, report_date,
                     ),
                 )
                 n_mentions += 1

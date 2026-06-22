@@ -8,7 +8,7 @@ on:
     inputs:
       lookback:
         description: "抓最近幾天內容"
-        default: "1"
+        default: "3"
 
 permissions:
   contents: write
@@ -43,7 +43,7 @@ jobs:
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           HF_HUB_DISABLE_SYMLINKS_WARNING: "1"
         run: |
-          python -m app.main --lookback "${{ github.event.inputs.lookback || '1' }}" run
+          python -m app.main --lookback "${{ github.event.inputs.lookback || '3' }}" run
 
       - name: Commit history & web report
         run: |
