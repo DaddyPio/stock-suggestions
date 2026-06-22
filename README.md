@@ -64,6 +64,9 @@ py -m app.main send               # 用現有排名寄信
 
 本機預覽：`py -m app.main --date <YYYY-MM-DD> web` 後開 `docs/index.html`。
 
+**歷史保留**：每次跑完自動清理超過 `RETENTION_DAYS`（預設 60 天）的舊報告與 `data/history`，
+repo 維持精簡（2 個月 ≈ 約 3 MB）。可在 `.env` 調整天數。
+
 ## 雲端排程（GitHub Actions）
 
 `.github/workflows/daily.yml` 每交易日 22:30 UTC（= 隔天 06:30 台灣時間）自動跑 `run`，

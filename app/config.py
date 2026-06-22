@@ -37,6 +37,9 @@ TOP_N = int(os.getenv("TOP_N", "10"))
 WEIGHT_DISCUSSION = float(os.getenv("WEIGHT_DISCUSSION", "0.6"))
 WEIGHT_RECOMMENDATION = float(os.getenv("WEIGHT_RECOMMENDATION", "0.4"))
 
+# 歷史報告保留天數（超過即自動清理）
+RETENTION_DAYS = int(os.getenv("RETENTION_DAYS", "60"))
+
 # 通用 HTTP header，降低被擋機率
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
