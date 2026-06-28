@@ -56,12 +56,12 @@
 
     <div class="copybar">
       <button class="copybtn" id="copyBtn">📋 複製全文（含 AI 摘要指令）</button>
-      <div class="copyhint">複製後貼到 Claude，即可一次產生每檔約 500 字摘要</div>
+      <div class="copyhint">複製後貼到 Claude，即可一次產生每檔約 200 字摘要</div>
     </div>
 
     {% if not has_ai %}
     <div class="archive" style="text-align:center;color:#b8860b;">
-      ⓘ 目前為「原文片段版」（未啟用 AI 摘要與情緒分析）。接上 Anthropic API 後將顯示看多/看空與 500 字摘要。
+      ⓘ 目前為「原文片段版」（未啟用 AI 摘要與情緒分析）。接上 Anthropic API 後將顯示看多/看空與 200 字摘要。
     </div>
     {% endif %}
 
@@ -105,8 +105,8 @@
   const DATE = "{{ item_date }}";
   const PROMPT =
     "你是專業台股研究員。以下是 " + DATE + " 各方輿情（新聞、論壇、YouTube、Podcast）整理出的熱門個股與原文片段。\n" +
-    "請為「每一檔」個股各寫一段約 500 字的繁體中文摘要，內容涵蓋：被討論的主要原因／題材、市場看多與看空的理由、值得注意的風險。\n" +
-    "語氣客觀，非投資建議。請逐檔輸出，每檔以「排名. 股名(代號)」為標題。\n\n" +
+    "請為「每一檔」個股各寫一段約 200 字的繁體中文摘要，內容涵蓋：被討論的主要原因／題材、市場看多與看空的理由、值得注意的風險。\n" +
+    "語氣客觀。請逐檔輸出，每檔以「排名. 股名(代號)」為標題；段落結尾不要加任何免責聲明（例如「本段為輿情整理，非投資建議」）。\n\n" +
     "===== 輿情資料 =====\n\n";
 
   function buildText() {
