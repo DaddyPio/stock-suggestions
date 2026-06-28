@@ -32,6 +32,12 @@
              font-size:13px; color:#555; }
   .archive a { color:#2a6df4; text-decoration:none; display:inline-block; margin:3px 8px 3px 0; }
   .footer { text-align: center; color: #aaa; font-size: 11px; padding: 18px 0; }
+  .copybar { text-align:center; margin: 8px 0 4px; }
+  .copybtn { background:#2a6df4; color:#fff; border:none; border-radius:24px;
+             padding:11px 22px; font-size:14.5px; font-weight:700; cursor:pointer;
+             box-shadow:0 2px 6px rgba(42,109,244,.35); }
+  .copybtn:active { transform: translateY(1px); }
+  .copyhint { color:#888; font-size:11.5px; margin-top:6px; }
   @media (prefers-color-scheme: dark) {
     body { background:#15171a; color:#e8e8e8; }
     .card,.archive { background:#1e2125; box-shadow:none; }
@@ -46,6 +52,11 @@
       <h1>📈 台股每日輿情 Top {{ rows|length }}</h1>
       <div class="date">{{ item_date }}</div>
       <div class="src">資料來源：新聞評論／PTT／YouTube 字幕／Podcast 轉錄</div>
+    </div>
+
+    <div class="copybar">
+      <button class="copybtn" id="copyBtn">📋 複製全文（含 AI 摘要指令）</button>
+      <div class="copyhint">複製後貼到 Claude，即可一次產生每檔約 500 字摘要</div>
     </div>
 
     {% if not has_ai %}
@@ -88,5 +99,41 @@
       綜合分 = 討論度 × {{ w_disc }} + 推薦度 × {{ w_rec }}
     </div>
   </div>
+
+<script>
+  const REPORT = {{ rows_json | safe }};
+  const DATE = "{{ item_date }}";
+  const PROMPT =
+    "你是專業台股研究員。以下是 " + DATE + " 各方輿情（新聞、論壇、YouTube、Podcast）整理出的熱門個股與原文片段。\n" +
+    "請為「每一檔」個股各寫一段約 500 字的繁體中文摘要，內容涵蓋：被討論的主要原因／題材、市場看多與看空的理由、值得注意的風險。\n" +
+    "語氣客觀，非投資建議。請逐檔輸出，每檔以「排名. 股名(代號)」為標題。\n\n" +
+    "===== 輿情資料 =====\n\n";
+
+  function buildText() {
+    let t = PROMPT;
+    for (const r of REPORT) {
+      t += `${r.rank}. ${r.name}(${r.ticker})　綜合分 ${r.total_score}／${r.n_sources} 來源 ${r.n_mentions} 則\n`;
+      let s = (r.summary || "").replace(/^📌[^\n]*\n/, "").trim();
+      t += s + "\n\n";
+    }
+    return t;
+  }
+
+  const btn = document.getElementById("copyBtn");
+  btn.addEventListener("click", async () => {
+    const text = buildText();
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (e) {
+      // 後備：用隱藏 textarea
+      const ta = document.createElement("textarea");
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      document.execCommand("copy"); document.body.removeChild(ta);
+    }
+    const old = btn.textContent;
+    btn.textContent = "✅ 已複製，去貼到 Claude！";
+    setTimeout(() => { btn.textContent = old; }, 2200);
+  });
+</script>
 </body>
 </html>

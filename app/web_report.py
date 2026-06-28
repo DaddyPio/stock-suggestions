@@ -6,6 +6,7 @@
 """
 from __future__ import annotations
 
+import json
 import logging
 import re
 from datetime import date, timedelta
@@ -36,10 +37,16 @@ def _render(item_date: str, rows: list[dict], archive_dates: list[str],
         loader=FileSystemLoader(str(TEMPLATE_DIR)),
         autoescape=select_autoescape(["html"]),
     )
+    fields = ("rank", "name", "ticker", "total_score", "discussion_score",
+              "recommendation_score", "n_sources", "n_mentions", "summary")
+    slim = [{k: r.get(k) for k in fields} for r in rows]
+    rows_json = json.dumps(slim, ensure_ascii=False).replace("</", "<\\/")
+
     tmpl = env.get_template("report.html.j2")
     return tmpl.render(
         item_date=item_date,
         rows=rows,
+        rows_json=rows_json,
         archive_dates=archive_dates,
         link_prefix=link_prefix,
         home_link=home_link,
