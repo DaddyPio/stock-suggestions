@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { font-family: -apple-system, "Segoe UI", "Microsoft JhengHei", sans-serif;
+         color: #1a1a1a; background: #f5f6f8; margin: 0; padding: 0; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 16px; }
+  .header { text-align: center; padding: 20px 0 8px; }
+  .header h1 { font-size: 20px; margin: 0; color: #111; }
+  .header .date { color: #888; font-size: 13px; margin-top: 4px; }
+  .card { background: #fff; border-radius: 10px; padding: 16px 18px; margin: 12px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .rank-row { display: flex; align-items: baseline; gap: 8px; }
+  .rank { font-size: 22px; font-weight: 700; color: #c79100; min-width: 34px; }
+  .name { font-size: 17px; font-weight: 700; }
+  .ticker { color: #888; font-size: 13px; font-weight: 500; }
+  .metrics { margin: 8px 0; font-size: 12.5px; color: #555; }
+  .pill { display: inline-block; background: #eef1f5; border-radius: 12px;
+          padding: 2px 9px; margin-right: 6px; margin-top: 4px; }
+  .bull { color: #1a8a3b; } .bear { color: #c0392b; }
+  .summary { font-size: 14px; line-height: 1.7; color: #2a2a2a; margin-top: 10px;
+             white-space: pre-wrap; }
+  .footer { text-align: center; color: #aaa; font-size: 11px; padding: 18px 0; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>📈 台股每日輿情 Top 10</h1>
+      <div class="date">2026-07-16　·　資料來源：新聞評論／論壇／YouTube／Podcast</div>
+    </div>
+
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">1</span>
+        <span class="name">台積電</span>
+        <span class="ticker">2330</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 80.0</span>
+        <span class="pill">討論度 100.0</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">6 來源／12 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 盤中速報 - 櫃買市場加權指數上漲8.64點至416.05點，漲幅2.12%。櫃買市場加權指數盤中漲幅2.12%，台積電概念股、轉單利多概念表現強勁。快同時查看近日週月績效與即時新聞資訊。
+• [鉅亨網-台股] 雙代工策略生變！英特爾原定七成訂單給台積電 如今90%以上改自家生產。外媒最新報導找出，英特爾打算 2026 年底發布 Nova Lake，屬於酷睿 Ultra 400 系列，採用基於 Tile 的設計，原先打算採用雙代工廠策略，大部分計算模組生產交給台積電負責，佔比約在 6
+• [鉅亨網-頭條] 半導體迎關鍵48小時 「這兩份財報」定調AI市場情緒。隨著高盛、摩根大通率先揭開美股第二季財報季序幕，市場焦點轉向本週登場的半導體重量級財報。艾司摩爾（ASML）與台積電 (2330-TW) (TSM-US) 將分別於週三 (15 日)、週四 (16 日) 公布第二季業績，市場普遍視其財報與展望為全球半導體及設備產業景氣的重要風向球，不僅牽動 AI 晶
+• [經濟日報-股市] 、富邦標普500、主動富邦複合收益、主動安聯台灣高息、主動群益科技創新、亞泥、幸福、福懋、南紡、堤維西、中砂、光洋科、允強、汎德永業、昆盈、廣達、漢唐、太設、中工、王品、世禾、安可、盈正、TPK-KY、崇越、寶雅、研通、環球晶 法人說明會：台積電 股東臨時會：群光 增資股上市：邑昇  國際 南韓央行利率決策 美國6月零售銷售、上周初領失業金人數
+• [經濟日報-股市] 讓讀者在每天清晨能快速掌握最重要的財經大事。  一、政院今拍板青安3.0 將設四大緊箍咒 利息補貼退場溯及既往 行政院院會今（16）日將拍板「青安3.0」方案，新制自8月1日上路，實施至2029年7月31日，為期三年...more   二、台積電今法說催動台股行情 法人預期權王將釋正向訊息 助攻指數續彈 台股昨（15）日在美股收漲、台指期拉高結算的軋空效應下，加上內資法人及市場買盤大舉點火拉抬，激勵指數開高走高...more   三、AI 帶動需求爆發、中東衝突推升原料成本
+• [經濟日報-股市] 權王目標價 美銀喊3,100。台積電今（16）日將召開法說會，美銀證券在最新釋出的台積電前瞻報告中，維持「買進」評等，並將目標價調升至3,100元，居外資圈第八高。美銀同時也對台積電未來營運拋出「三問」，預期將成法說會焦點。</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">2</span>
+        <span class="name">力士</span>
+        <span class="ticker">4923</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 62.9</span>
+        <span class="pill">討論度 71.4</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">3 來源／12 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-頭條] 中國長鑫存儲上市募資擴產引憂慮 美光、SanDisk、SK海力士ADR崩超8%。市場擔憂中國長鑫存儲 (CXMT) 即將啟動首次公開募股 (IPO)，並藉由募資大幅擴充產能，恐加劇全球 DRAM 市場競爭，記憶體族群週三 (15 日) 遭遇沉重賣壓。
+• [鉅亨網-頭條] AI投資熱潮未歇！Fundstrat掌門人：SK海力士、三星回檔都是買點。Fundstrat 共同創辦人 Tom Lee 表示，近期 SK 海力士與三星電子股價回檔只是 AI 長期多頭中的正常整理，而非趨勢反轉。他認為記憶體仍是 AI 基建核心，建議投資人把握每次修正逢低布局。
+• [鉅亨網-頭條] 〈美股盤後〉通膨降溫標普連二紅 費半跌逾2% 美光、SK海力士ADR崩超8%。美股週三 (15 日) 漲跌互見，美國最新通膨數據低於市場預期，進一步緩解市場對聯準會今年升息的擔憂，帶動標普 500 指數連續第二個交易日收高
+• [鉅亨網-頭條] 遭花旗降目標。華爾街多家投行更新最新個股評級，AI 與半導體族群仍是焦點。Needham、高盛與 KeyBanc 同步調升 SpaceX、摩根大通及 AMD 目標價，花旗則下修微軟目標價，匯豐調降 Arm 投資評級，巴克萊首度看好 SK 海力士。
+• [鉅亨網-頭條] 韓總統李在明今 (15) 日在總統府青瓦台迎賓館主持政府各部門第二輪工作報告時坦言，受短期史無前例暴漲影響，韓股相當不穩定，「需要時間與一定波動才能趨於穩定」。此輪報告自今日起持續至下月初，共舉行 9 場。  韓股近期在三星電子與 SK 海力士帶動下曾領漲全球，但這一規模達 4 兆美元的市場因 A
+• [Yahoo股市-新聞] 通膨降溫緩解升息擔憂！美股3大指數收紅　記憶體再跌「費半跌逾2％」。即時中心／綜合報導美國最新通膨數據低於市場預期，進一步緩解對聯準會（Fed）今年升息的擔憂，美股週三（15日）普遍收高；然而記憶體類股暴跌，美光、SK海力士重挫，也導致費半終場下滑逾2％。終場道瓊工業</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">3</span>
+        <span class="name">富邦金</span>
+        <span class="ticker">2881</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 37.1</span>
+        <span class="pill">討論度 28.6</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">3 來源／3 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 富邦金奪上半年金控獲利王！加計FVOCI股票狂賺1884億元 超越歷年全年。富邦金控 (2881-TW) 今 (15) 日公布 2026 年 6 月自結合併稅後純益 94.9 億元，累計前 6 月稅後純益 973.4 億元，創下歷史同期新高
+• [經濟日報-股市] 衝突導致化工原料大漲...more   四、國科會引資擬設太空基金 和碩董座童子賢籲增加預算、動作要快 國科會昨（15）日召開委員會議，民間委員、和碩科技（4938）董事長童子賢在會中呼籲，政府要加速太空科技預算投入...more   五、富邦金奪金控上半年獲利王 純益973億元 EPS 6.67元冠同業 國內13家上市金控今年上半年獲利成績單昨（15）日全數揭曉，13家金控6月
+• [Yahoo股市-新聞] 富邦金發佈2025永續報告書，綠色金融實績突破2.7兆，加速推動脫碳進程。【財訊快報／記者劉居全報導】富邦金控(2881)秉持「正向力量 成就可能」的品牌精神，持續發揮金融影響力，支持產業與社會邁向永續轉型。昨(15)日發佈《2025年永續</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">4</span>
+        <span class="name">聯電</span>
+        <span class="ticker">2303</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 34.3</span>
+        <span class="pill">討論度 23.8</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">2 來源／4 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 處置股新增華新科等3檔被關至7/29 聯電明起出關今飆漲停。根據證交所、櫃買中心最新公告顯示，今 (15) 日上市櫃及興櫃股票市場，新增華星科、擎亞及尚茂等 3 間廠商有價證券，自明 (16) 日起遭處置股管制交易。其中聯電明日起取消處置交易。
+• [鉅亨網-台股] 鉅亨速報 - Factset 最新調查：聯電(2303-TW)EPS預估上修至4.7元，預估目標價為92.5元。FactSet 最新調查：聯電(2303-TW)EPS預估上修，預估EPS、預估營收、目標價、歷史獲利表現、即時新聞資訊。
+• [鉅亨網-台股] 鉅亨速報 - Factset 最新調查：聯電(2303-TW)目標價調升至92.5元，幅度約5.11%。FactSet 最新調查：聯電(2303-TW)目標價調升，最高估值、最低估值、中位數、綜合評級、近5日股價、大盤表現、即時新聞資訊。
+• [Yahoo股市-新聞] 聯電ADR15日上漲1.08美元漲幅4.53%折台股160.43元。(中央社台北2026年 7月16日電)聯電在NYSE掛牌 ADR以24.92美元作收，上漲1.08美元，漲幅 4.53%。由於每單位聯電 ADR相當於台股 5股聯電普通股，</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">5</span>
+        <span class="name">台塑</span>
+        <span class="ticker">1301</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 34.3</span>
+        <span class="pill">討論度 23.8</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">2 來源／4 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 〈台塑集團調薪〉台塑企業啟動「有感升級」大規模加薪 新進員工起薪創近10年最高調幅。台塑企業昨 (15) 日宣布集團年度調薪幅度達 4.5%，台塑企業總管理處總經理林善志表示，台塑企業前些年營運受大環境影響不甚理想，今 (2026) 年各項轉
+• [經濟日報-股市] 台積電今法說催動台股行情 法人預期權王將釋正向訊息 助攻指數續彈 台股昨（15）日在美股收漲、台指期拉高結算的軋空效應下，加上內資法人及市場買盤大舉點火拉抬，激勵指數開高走高...more   三、AI 帶動需求爆發、中東衝突推升原料成本 台塑兩大電子化學品喊漲 AI推升台積電（2330）先進製程接單強勁，帶動電子級化學品需求爆發，加上中東衝突導致化工原料大漲...more   四、國科會引資擬設太空基金 和碩董座童子賢籲增加預算、動作要快 國科會昨（15）日召開委員會議，民
+• [經濟日報-股市] 台塑大金傳有意 IPO。AI晶片需求強勁，帶動電子化學品市況熱，台塑集團高值化布局邁入新階段。業內人士表示，台塑集團旗下電子級氫氟酸（HF）大廠台塑大金已符合上市條件，並傳出公司也有意推動IPO，仍待日方合作夥伴同意後啟動相關程序。
+• [經濟日報-股市] 台塑 瞄準逾180天。台塑（1301）受益低價庫存，本業獲利優於預期，加上台塑化、台塑美國等業外收益挹注，自結第2季稅後純益106.5億元，季增225.8%，較去年同期虧損明顯好轉。</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">6</span>
+        <span class="name">傳奇</span>
+        <span class="ticker">4994</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 34.3</span>
+        <span class="pill">討論度 23.8</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">2 來源／4 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-頭條] 一文看完巴菲特罕見專訪：談AI、投資谷歌邏輯、Fed及市場最大隱憂。傳奇投資大師、波克夏 (A)(BRK.A-US) 董事長巴菲特週三（15 日）接受 CNBC 罕見專訪。在這次深入的對談中，巴菲特針對當前熾熱的市場環境、科技巨頭的布局策略、聯準會的人事變動，以及與長期夥伴比爾 · 蓋茲的個人關係等多個熱門
+• [鉅亨網-頭條] 稱「村裡的傻子都能賺」 巴菲特：我只是進入了對的市場。傳奇投資大師、波克夏 (A)(BRK.A-US) 董事長巴菲特週三 (15 日) 在接受 CNBC 罕見專訪時表示，自己之所以能取得今日成就，很大程度歸功於幸運，並謙稱在 80 億全球人口中，他或許是世上最幸運的前 10 人之一。  現年</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">7</span>
+        <span class="name">東元</span>
+        <span class="ticker">1504</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 31.4</span>
+        <span class="pill">討論度 19.0</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">2 來源／3 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 東元攻日本智慧動力商機 首度亮相TJM Series機器人關節模組。東元 (1504-TW) 日本子公司 TECO Japn(TEJ) 今 (15) 日起至 7 月 17 日，參與「日本台灣形象展」，首度亮相 TJM Series 全系列機
+• [鉅亨網-台股] 〈焦點股〉東元重電事業帶動Q2營收創77季新高 漲逾半根停板。東元 (1504-TW) 受惠北美基建商機與台電強韌電網計畫，帶動旗下電力能源事業表現，進一步推升第二季營收 165.89 億元，季對季、年對年皆成長，並創下 77 個季度以來單季新高，激
+• [Yahoo股市-新聞] 東元前進日本，全球首度完整展示TJM Series全系列機器人。【財訊快報／記者戴海茜報導】東元(1504)日本子公司TECO Japan（TEJ）於7月15日至17日參加東京舉行的「日本臺灣形象展」，聚焦展示機器人關節模組、電動載具動力系</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">8</span>
+        <span class="name">無敵</span>
+        <span class="ticker">8201</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 31.4</span>
+        <span class="pill">討論度 19.0</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">2 來源／3 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [數字台灣（謝金河）] 體應善盡社會責任！】  ★指數狂飆後的代價！南韓槓桿ETF引爆骨牌效應… 謝金河：槓桿操作如「竹竿接菜刀」！   ★整合台灣無人機戰隊！漢翔領軍搶攻全球商機！ 航太跨足無人機！曹進平：像滿漢全席對上泡麵…  ★科技顛覆戰爭法則！大國神話不再無敵！ 李東昇：平戰融合借鏡烏國、台灣布局無人機未來！  漢翔董事長          曹進平 全球觀智慧永續顧問  李東昇  請鎖定 7/12(日)晚上20:00年代電視「數字台灣」 ---------------------------
+• [股癌 Gooaye] 去思考說是不是我研究錯了是不是我想得太美好了所以這個可能跟不知道什麼突然間被點通了所以兄弟有問題突然點通了一件事情就其實不然說像我們在市場裡面去做交易要不是有這些財殺車的時刻像過去的兩個禮拜你真的會變成一個無限膨脹的人你真的會覺得自己是他媽無敵的真的是這樣然後搞不太家裡他講壞了大聲女人隨國端過來這個是意圖我不會這樣但我一直說你如果這個盤讓我長兩年說不定我講話就往那個方向去靠龍之間幹的賺錢我最屌的那就是因為會有一些盤診會有一些修正會有一些試驗委或甚至是時間的挫配你是對的但他等半</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">9</span>
+        <span class="name">友達</span>
+        <span class="ticker">2409</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 28.6</span>
+        <span class="pill">討論度 14.3</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">2 來源／2 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 外資連9賣減碼縮至14億元 期貨空單7月以來首見跌破8萬口。台股今（15）日終場收 45631.59 點，上漲 893.64 點，站回 5 日線，成交量 9840.81 億元，其中外資賣超 14.15 億元，主要賣超群創 3.4 萬張、友達 2.7 萬張、南亞 2.4 萬張。
+• [Yahoo股市-新聞] 友達ADR15日上漲0.0195美元漲幅0.23%折台股27.75元。(中央社台北2026年 7月16日電)友達光電在OTC US掛牌ADR以 8.62美元作收，上漲0.0195美元，漲幅 0.23%。由於每單位友達 ADR相當於台股10股</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">10</span>
+        <span class="name">昇達科</span>
+        <span class="ticker">3491</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 28.6</span>
+        <span class="pill">討論度 14.3</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">2 來源／2 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 昇達科擬斥17億元收購巨頻科技51%股權 預計8月完成交割。昇達科擬斥資 17 億元收購巨頻科技股權 預計 8 月完成交割
+• [經濟日報-股市] 昇達科併購巨頻 深化低軌衛星、毫米波通訊布局。昇達科技（3491）昨（15）日董事會決議通過取得巨頻科技股權案，交易總金額不高於17億元，收購後加計昇達科原持有股權，對巨頻持股將超過51%，成為昇達科子公司，可望擴大低軌衛星、毫米波通訊市場</div>
+    </div>
+    
+
+    <div class="footer">
+      本信由 Stock-suggestions 自動產生，僅供研究參考，非投資建議。<br>
+      綜合分 = 討論度 × 0.6 + 推薦度 × 0.4
+    </div>
+  </div>
+</body>
+</html>
