@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { font-family: -apple-system, "Segoe UI", "Microsoft JhengHei", sans-serif;
+         color: #1a1a1a; background: #f5f6f8; margin: 0; padding: 0; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 16px; }
+  .header { text-align: center; padding: 20px 0 8px; }
+  .header h1 { font-size: 20px; margin: 0; color: #111; }
+  .header .date { color: #888; font-size: 13px; margin-top: 4px; }
+  .card { background: #fff; border-radius: 10px; padding: 16px 18px; margin: 12px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .rank-row { display: flex; align-items: baseline; gap: 8px; }
+  .rank { font-size: 22px; font-weight: 700; color: #c79100; min-width: 34px; }
+  .name { font-size: 17px; font-weight: 700; }
+  .ticker { color: #888; font-size: 13px; font-weight: 500; }
+  .metrics { margin: 8px 0; font-size: 12.5px; color: #555; }
+  .pill { display: inline-block; background: #eef1f5; border-radius: 12px;
+          padding: 2px 9px; margin-right: 6px; margin-top: 4px; }
+  .bull { color: #1a8a3b; } .bear { color: #c0392b; }
+  .summary { font-size: 14px; line-height: 1.7; color: #2a2a2a; margin-top: 10px;
+             white-space: pre-wrap; }
+  .footer { text-align: center; color: #aaa; font-size: 11px; padding: 18px 0; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>📈 台股每日輿情 Top 10</h1>
+      <div class="date">2026-11-17　·　資料來源：新聞評論／論壇／YouTube／Podcast</div>
+    </div>
+
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">1</span>
+        <span class="name">台積電</span>
+        <span class="ticker">2330</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 80.0</span>
+        <span class="pill">討論度 100.0</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">5 來源／16 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 〈台股開盤〉台股早盤重挫後買盤浮現 多空交戰台股苦撐4萬點之上。美股四大指數周一(16日)全數收黑，AI科技股同步承壓，台積電ADR(TSM-US)下挫超過6%，亞股今(17)日也持續烏雲籠罩，台股今日開盤同樣難逃重挫命運，早盤以40546.64點開低，盤中一度跌逾1200點，最低跌至39786.45點，失守4萬關卡，不過隨後買盤湧現上攻，翻紅漲至41533
+• [鉅亨網-台股] 晶片、光通訊全面挫跌！費半崩逾5% 輝達、台積電、艾司摩爾均大跌 英特爾遭輝達減持重挫逾7%。美股三大指數周一全跌，費半挫逾5%，輝達、台積電、艾司摩爾與光通訊股領跌 SemiAnalysis下調AI加速器、資本開支、HBM與電力需求預測，2028年資本開支估值降近三成，市場憂AI
+• [鉅亨網-台股] AI賺進大把美元 台幣為何還在貶？外媒揭台企資金留海外。AI熱潮帶動台灣經濟與出口強勁，但新台幣今年仍貶逾4%，逼近近十年低點。 企業美元留海外支應擴產投資，外資今年淨賣超台股達新台幣3兆元，壓抑台幣。 美元保單增加美元需求，台積電擬自2027年起以美元配息，恐再減少換匯買盤。
+• [鉅亨網-台股] 外資來台投資208.99億美元，首度突破200億美元，年增127.50%，創歷年同期新高。 新加坡商美光、沃旭能源、玉山能源及酷澎等外商持續加碼，帶動台灣投資環境吸引力升溫。 台灣對外投資達699.17億美元、年增105.14%創新高，主因台積電等企業加速海外布局。
+• [鉅亨網-台股] 過150檔個股跌停 法人：市場關注輝達AI循環融資發展。台股今(16)日盤中越走越低，加權指數跌點一度超過2200點，跌幅超過4.5%，櫃買指數跌幅更超過6%，合計上市櫃多達150檔亮跌停燈，市場氣氛延續上周五美股黑色星期五的恐慌拋售。  台積電今日盤中重挫達4%，造成跌點約830點，主要因外資沿路減碼，後續先觀察美國 ADR 走勢，而目前市場聚焦11月
+• [鉅亨網-台股] 〈楊金龍立院備詢〉看黃仁勳事件是短期亂流 應不會影響北士科計畫。黃仁勳事件壓抑台股，加權指數盤中跌逾1600點，台積電陷2300元保衛戰。 楊金龍稱此事屬短期亂流、影響範圍大，但不至於影響輝達北士科海外總部計畫。 央行稱流動性準備充分，外資集中波動時會進場調節，新台幣貶值主因是外資賣超匯出。</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">2</span>
+        <span class="name">中鼎</span>
+        <span class="ticker">9933</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 46.1</span>
+        <span class="pill">討論度 43.5</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">4 來源／5 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 〈焦點股〉中鼎擁高科技與能源工程雙引擎動能3季EPS4.86元 今攻漲停。中鼎在高科技與能源工程雙引擎帶動下，建工程總額達4,981億元創高，1-9月稅後純益45.31億元、每股純益4.86元。 第三季營收218.54億元，年、季雙增；毛利率13.4
+• [鉅亨網-台股] 中鼎Q3獲利爆發1-9月EPS達4.86元　在手訂單近5000億元創新高。中鼎截至9月底在建工程總額4,981億元創新高，未來數年營收能見度高。 2026年第三季營收218.54億元、稅後純益20.73億元，前3季EPS 4.86元。 高科
+• [鉅亨網-頭條] 盤中速報 - 中鼎(9933)股價拉至漲停，漲停價56.6元，成交27,774張。中鼎(9933-TW)17日10:24上漲5.1元，股價漲停報56.6元，委買26張、委賣2,862張，成交27,774張。主要業務為工程規劃、設計、採購、建造、專案管理、
+• [經濟日報-股市] 中鼎股價大漲創13年新高！強攻 AI「高科技工程」占新簽約金額近五成。國內統包工程龍頭中鼎工程（9933）16日召開法人說明會，中鼎表示，截至今年10月，集團在建工程總額達5,011億元，創歷史新高，另外新簽約額達1,178億元，其中高科技</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">3</span>
+        <span class="name">川湖</span>
+        <span class="ticker">2059</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 38.3</span>
+        <span class="pill">討論度 30.4</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">3 來源／4 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 鉅亨速報 - Factset 最新調查：川湖(2059-TW)EPS預估下修至330.1元，預估目標價為13375元。根據FactSet最新調查，共7位分析師，對川湖(2059-TW)做出2026年EPS預估：中位數由336.97元下修至330.1元，其中最高估值393.72元，
+• [鉅亨網-台股] 鉅亨速報 - Factset 最新調查：川湖(2059-TW)目標價調降至13375元，幅度約3.43%。根據FactSet最新調查，共11位分析師，對川湖(2059-TW)提出目標價估值：中位數由13850元下修至13375元，調降幅度3.43%。其中最高估值16500元，最低
+• [鉅亨網-頭條] 盤中速報 - 川湖(2059)股價殺至跌停，跌停價6415.0元，成交431張。川湖(2059-TW)17日10:27下跌710元，股價跌停報6415.0元，委買7張、委賣4張，成交431張。主要業務為研發、設計、製造和銷售伺服器等用導軌及其週邊零組件生
+• [經濟日報-股市] 下跌9.34%、聯發科下跌7.89%、廣達下跌4.34%，台達電收跌停。 盤面強勢股順藥、華經、大世科、意藍等共32檔漲停；全景軟體、光焱科技、中環、精誠、聯華等漲幅3%以上。 盤面弱勢股，信驊、創意、健策、精測、印能科技等共168檔跌停；川湖、旺宏、采鈺、楠梓電、嘉澤、盟立、洋基工程等跌幅9%以上。 終場台灣加權指數下跌2635.04點，以41040.08點作收，成交量9008.89億元。三大類股同步下跌，電子下跌6.72%、傳產下跌3.64%、金融下跌3.40%。次族群方</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">4</span>
+        <span class="name">精測</span>
+        <span class="ticker">6510</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 35.7</span>
+        <span class="pill">討論度 26.1</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">3 來源／3 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 波成分股調整！兆豐台灣晶圓製造(00913-TW)將於今(17)日進行下半年成分股調整，採取「3進3出」，新納入南亞科(2408-TW)、全新(2455-TW)及精材(3374-TW)，刪除光洋科(1785-TW)、志聖(2467-TW)及精測(6510-TW)，調整結果於今日收盤
+• [鉅亨網-頭條] 盤中速報 - 精測(6510)股價殺至跌停，跌停價2705.0元，成交483張。精測(6510-TW)17日10:21下跌300元，股價跌停報2705.0元，委買3,000張、委賣1,000張，成交483張。主要業務為晶圓測試卡。IC測試板。技術服務與其
+• [經濟日報-股市] 方面，台積電下跌5.74%、鴻海下跌9.34%、聯發科下跌7.89%、廣達下跌4.34%，台達電收跌停。 盤面強勢股順藥、華經、大世科、意藍等共32檔漲停；全景軟體、光焱科技、中環、精誠、聯華等漲幅3%以上。 盤面弱勢股，信驊、創意、健策、精測、印能科技等共168檔跌停；川湖、旺宏、采鈺、楠梓電、嘉澤、盟立、洋基工程等跌幅9%以上。 終場台灣加權指數下跌2635.04點，以41040.08點作收，成交量9008.89億元。三大類股同步下跌，電子下跌6.72%、傳產下跌3.64</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">5</span>
+        <span class="name">信驊</span>
+        <span class="ticker">5274</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 33.0</span>
+        <span class="pill">討論度 21.7</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">2 來源／4 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-頭條] 盤中速報 - 信驊(5274)股價殺至跌停，跌停價9720.0元，成交304張。信驊(5274-TW)17日10:33下跌1080元，股價跌停報9720.0元，委買10,000張、委賣1,000張，成交304張。主要業務為多媒體積體電路。電腦周邊積體電路
+• [經濟日報-股市] 34千金僅「這4檔」逆勢走揚。台股17日上演近1,750點劇烈震盪，早盤一度重挫1,253.63點，摜破40,000點大關，盤中又一度大漲493.76點，多空交戰激烈。不過，大盤急拉並未帶動高價股同步回穩，千金股家數進一步縮減至34檔，股王信驊（5274）更失守萬元大關、一度觸及跌停，股后創意（3443）鎖在跌停價6,975元，AI高價股成為盤面賣壓最集中的區塊。
+• [經濟日報-股市] 台股僅存的萬元股沒了！股王信驊跌破10,000元整數關卡、盤中亮燈 外資為何降評？。台股17日劇烈震盪，AI高價股賣壓再度升高，股王信驊（5274）早盤一度觸及跌停，股價下探9,720元，失守萬元大關。儘管盤中跌停打開，最新仍下跌逾9%，美股科技股修正之外，外資調降
+• [經濟日報-股市] 入避險買盤。權值股方面，台積電下跌5.74%、鴻海下跌9.34%、聯發科下跌7.89%、廣達下跌4.34%，台達電收跌停。 盤面強勢股順藥、華經、大世科、意藍等共32檔漲停；全景軟體、光焱科技、中環、精誠、聯華等漲幅3%以上。 盤面弱勢股，信驊、創意、健策、精測、印能科技等共168檔跌停；川湖、旺宏、采鈺、楠梓電、嘉澤、盟立、洋基工程等跌幅9%以上。 終場台灣加權指數下跌2635.04點，以41040.08點作收，成交量9008.89億元。三大類股同步下跌，電子下跌6.72%</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">6</span>
+        <span class="name">資通</span>
+        <span class="ticker">2471</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 30.4</span>
+        <span class="pill">討論度 17.4</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">1 來源／5 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 67點（或2.72%），暫報310.45點。歷史漲跌幅近 1 週：-0.89%近 1 月：-20.27%近 3 月：-20.41%近 6 月：-22.39%今年以來：+15.52%焦點個股系統整合 (SI)概念領跌-5.23%。其中    資通(
+• [鉅亨網-台股] 57點（或2.69%），暫報310.55點。歷史漲跌幅近 1 週：-0.89%近 1 月：-20.27%近 3 月：-20.41%近 6 月：-22.39%今年以來：+15.52%焦點個股系統整合 (SI)概念領跌-5.23%。其中    資通(
+• [鉅亨網-台股] 35點（或2.62%），暫報310.77點。歷史漲跌幅近 1 週：-0.89%近 1 月：-20.27%近 3 月：-20.41%近 6 月：-22.39%今年以來：+15.52%焦點個股系統整合 (SI)概念領跌-5.23%。其中    資通(
+• [鉅亨網-台股] 75點（或2.43%），暫報311.37點。歷史漲跌幅近 1 週：-0.89%近 1 月：-20.27%近 3 月：-20.41%近 6 月：-22.39%今年以來：+15.52%焦點個股系統整合 (SI)概念領跌-5.23%。其中    資通(
+• [鉅亨網-台股] 11點（或2.23%），暫報312.01點。歷史漲跌幅近 1 週：-0.89%近 1 月：-20.27%近 3 月：-20.41%近 6 月：-22.39%今年以來：+15.52%焦點個股系統整合 (SI)概念領跌-5.23%。其中    資通(</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">7</span>
+        <span class="name">華新科</span>
+        <span class="ticker">2492</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 30.4</span>
+        <span class="pill">討論度 17.4</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">2 來源／3 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 下跌12.9點（或4.04%），暫報306.22點。歷史漲跌幅近 1 週：-0.89%近 1 月：-20.27%近 3 月：-20.41%近 6 月：-22.39%今年以來：+15.52%焦點個股電阻與電感概念領跌-9.44%。其中    華新科(249
+• [鉅亨網-台股] 880.77點（或2.15%），暫報40159.31點。歷史漲跌幅近 1 週：-1.49%近 1 月：-12.89%近 3 月：-10.41%近 6 月：-0.32%今年以來：+41.7%焦點個股電阻與電感概念領跌-9.44%。其中    華新科(2
+• [鉅亨網-頭條] 盤中速報 - 華新科(2492)股價殺至跌停，跌停價232.0元，成交14,712張。華新科(2492-TW)17日10:27下跌25.5元，股價跌停報232.0元，委買489張、委賣11張，成交14,712張。主要業務為電子零組件製造業。積層陶瓷及圓板</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">8</span>
+        <span class="name">聯茂</span>
+        <span class="ticker">6213</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 30.4</span>
+        <span class="pill">討論度 17.4</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">2 來源／3 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 台光電：輝達對台光電的營收占比從未超過20%。CCL廠接連往高頻高速材料發展的同時，近期因黃仁勳辭任輝達(NVDA-US) 執行長造成市場的恐慌，包括聯茂(6213-TW)、台燿(6274-TW)及類股股王台光電(2383-TW)股價的重挫，但台光電今(16)日發布重大訊息指出，輝達對台光電的營收占比從未超過20%  台光電的此一動作，主要起因
+• [鉅亨網-台股] 鉅亨速報 - Factset 最新調查：聯茂(6213-TW)EPS預估上修至23.25元，預估目標價為1055元。根據FactSet最新調查，共8位分析師，對聯茂(6213-TW)做出2026年EPS預估：中位數由21.82元上修至23.25元，其中最高估值26.3元，最低估值
+• [鉅亨網-頭條] 盤中速報 - 聯茂(6213)股價殺至跌停，跌停價432.0元，成交15,991張。聯茂(6213-TW)17日12:15下跌48元，股價跌停報432.0元，委買219張、委賣6張，成交15,991張。主要業務為多層印刷電路基材及銅箔基板及半成品及成品之</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">9</span>
+        <span class="name">國泰金</span>
+        <span class="ticker">2882</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 30.4</span>
+        <span class="pill">討論度 17.4</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">2 來源／3 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 13家金控10月獲利遇亂流僅這2家月增 前10月合賺近6680億元。13家金控10月合計稅後純益361.09億元，月減31.8%；僅國泰金、台新新光金月增 前10月合計稅後純益6679.88億元、年增31.8%；富邦金1264.7億居獲利王 國泰金10月賺90.9億奪單月冠軍；國壽淨值破兆、成首家淨值逾兆元保險公司
+• [鉅亨網-台股] 國泰金前10月對保留盈餘影響數2457億元、每股16.5元 續創歷史新高。國泰金控(2882-TW)公布2026年10月自結稅後純益90.9億元，累計稅後純益達1144.5億元，已超越去年全年獲利水準，EPS達7.56元；加計FVOCI股票
+• [Yahoo股市-新聞] 金控二哥之爭！國泰金強漲3%與中信金掀「比價行情」。中信金（2891）來勢洶洶！近期市值突破1.5兆元大關，逼近國泰金（2882）金控二哥寶座，今（17）日國泰金挾10月獲利王利多，一舉強漲逾3%，中信金反彈幅度更大，盤中一度漲3.3%，2檔掀起「比價</div>
+    </div>
+    
+    <div class="card">
+      <div class="rank-row">
+        <span class="rank">10</span>
+        <span class="name">富邦金</span>
+        <span class="ticker">2881</span>
+      </div>
+      <div class="metrics">
+        <span class="pill">綜合分 30.4</span>
+        <span class="pill">討論度 17.4</span>
+        <span class="pill">推薦度 50.0</span>
+        <span class="pill">2 來源／3 則</span>
+        <span class="pill"><span class="bull">看多 0</span> ·
+          <span class="bear">看空 0</span></span>
+      </div>
+      <div class="summary">📌 原文片段（未啟用 AI 摘要）：
+• [鉅亨網-台股] 13家金控10月獲利遇亂流僅這2家月增 前10月合賺近6680億元。13家金控10月合計稅後純益361.09億元，月減31.8%；僅國泰金、台新新光金月增 前10月合計稅後純益6679.88億元、年增31.8%；富邦金1264.7億居獲利王 國泰金10月賺90.9億奪單月冠軍；國壽淨值破兆、成首家淨值逾兆元保險公司
+• [鉅亨網-台股] 富邦金10月帳面轉虧、賣股後實賺135億元 前10月對保留盈餘影響數2634億元。富邦金控(2881-TW)公布今年前10月合併稅後純益1,264.7億元，每股稅後純益(EPS)為8.75元。透過 FVOCI 之股票處分損益，累計前10月金
+• [經濟日報-股市] 配息能力優於壽險金控同業 法人調高富邦金目標價。富邦金（2881）自行結算前十月每股稅後純益（EPS）8.7元，若加計透過其他綜合損益按公允價值衡量（FVOCI）股票資本利得的調整後EPS達18.5元，法人以明年可配發的現金股息水準推估，殖利率約5%，調升目標價。</div>
+    </div>
+    
+
+    <div class="footer">
+      本信由 Stock-suggestions 自動產生，僅供研究參考，非投資建議。<br>
+      綜合分 = 討論度 × 0.6 + 推薦度 × 0.4
+    </div>
+  </div>
+</body>
+</html>
